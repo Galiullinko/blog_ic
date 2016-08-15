@@ -1,3 +1,3 @@
 class PostDecorator < ApplicationDecorator
-  deligate :title, :text, :user
+  delegate :title, :text, :user
 end
