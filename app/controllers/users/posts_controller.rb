@@ -21,6 +21,5 @@ module User
     def post_params
       params.require(:post).permit(:title, :text, :user)
     end
-
   end
 end
