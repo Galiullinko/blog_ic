@@ -1,0 +1,10 @@
+- if current_user.present?
+  | Write your comment
+  = simple_form_for([post, comment]) do |f|
+    .form-inputs
+      = f.input :text
+    .form-actions
+      = f.button :submit
+- else
+  | Your must be signed in for leaving comments
+
