@@ -1,28 +1,19 @@
 class PostsController < ApplicationController
-  expose_decorated(:post, attributes: :post_params)
-  expose_decorated(:posts)
+  expose_decorated(:posts) { recent_posts_finder }
   expose_decorated(:comments) { post.comments.includes(:user) }
   expose_decorated(:comment) { post.comments.new }
-  expose_decorated(:users)
 
   def index
-    posts = Post.includes(:user).order(created_at: :desc)
-    posts = posts.where(user: params[:user]) if params[:user]
-  end
-
-  def create
-    post.user = current_user
-    if post.save
-      redirect_to post_path(post)
-    else
-      render "new"
-    end
   end
 
   def show
   end
 
   private
+
+  def recent_posts_finder
+    Post.includes(:user).order(created_at: :desc).limit(25)
+  end
 
   def post_params
     params.require(:post).permit(:title, :text, :user)
