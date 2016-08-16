@@ -1,9 +1,10 @@
 class CommentsController < ApplicationController
-  expose(:comment, attributes: :comment_params, from: :post)
+  expose(:comment, attributes: :comment_params)
+  expose(:post)
 
   def create
     comment.user = current_user
-    binding.pry
+    comment.post = post
     if comment.save
       redirect_to post_path(comment.post)
     else
@@ -14,6 +15,6 @@ class CommentsController < ApplicationController
   private
 
   def comment_params
-    params.require(:comment).permit(:text, :post_id)
+    params.require(:comment).permit(:text)
   end
 end
