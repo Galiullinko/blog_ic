@@ -1,7 +1,8 @@
 class PostsController < ApplicationController
+  expose_decorated(:post, attribute: :post_params)
   expose_decorated(:posts) { recent_posts_finder }
   expose_decorated(:comments) { post.comments.includes(:user) }
-  expose_decorated(:comment) { post.comments.new }
+  expose(:comment) { post.comments.new }
 
   def index
   end
