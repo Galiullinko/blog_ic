@@ -5,7 +5,7 @@ class PostDecorator < ApplicationDecorator
     user.full_name
   end
 
-  def comments_count
+  def comments_number
     comments.count
   end
 

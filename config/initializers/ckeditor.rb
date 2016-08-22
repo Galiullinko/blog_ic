@@ -1,4 +1,5 @@
 # Use this hook to configure ckeditor
+# rubocop:disable Lint/UnusedBlockArgument
 Ckeditor.setup do |config|
   # ==> ORM configuration
   # Load and configure the ORM. Supports :active_record (default), :mongo_mapper and
@@ -56,3 +57,4 @@ Ckeditor.setup do |config|
   # By default: "/assets/ckeditor/config.js"
   # config.js_config_url = "/assets/ckeditor/config.js"
 end
+# rubocop:enable Lint/UnusedBlockArgument
