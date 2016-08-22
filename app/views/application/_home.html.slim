@@ -1,0 +1,16 @@
+.row
+  .medium-8.columns
+    - posts.each do |p|
+      .blog-post
+        h2
+          = (link_to p.title, p)
+        p
+          = p.text_html
+        .callout
+          ul(class="menu simple")
+            li
+              = link_to "Author: #{p.author}", p
+            li
+              = link_to "Comments: #{p.comments_count}", p
+
+
