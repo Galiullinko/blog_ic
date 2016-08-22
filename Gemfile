@@ -15,6 +15,7 @@ gem "sass-rails", "~> 5.0.0"
 gem "skim"
 gem "therubyracer", platforms: :ruby
 gem "uglifier", ">= 2.7.2"
+gem "ckeditor"
 
 # views
 gem "active_link_to"
@@ -41,6 +42,8 @@ gem "responders"
 gem "rollbar"
 gem "seedbank"
 gem "stackprof"
+gem "carrierwave"
+gem "mini_magick"
 
 group :staging, :production do
   gem "newrelic_rpm"
