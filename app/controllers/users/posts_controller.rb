@@ -1,7 +1,10 @@
-module User
+module Users
   class PostsController < ApplicationController
     before_action :authenticate_user!
     expose_decorated(:post, attributes: :post_params)
+    expose_decorated(:comments) { post.comments.includes(:user) }
+    expose(:comment) { post.comments.new }
+    expose(:user) {  }
 
     # TODO: respond_with (responder)
     def create
@@ -14,6 +17,12 @@ module User
     end
 
     def destroy
+    end
+
+    def show
+    end
+
+    def new
     end
 
     private
