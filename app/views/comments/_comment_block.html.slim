@@ -1,4 +1,3 @@
-- comments.each do |comment|
-  = render "comments/comment", comment: comment
-  p
-= render "comments/form"
+= content_tag :div, data: { "fragment-id" => "discussion" } do
+  = render("users/comments/form", comment: comment) if user_signed_in?
+  = render(partial: "comments/comment", collection: comments)

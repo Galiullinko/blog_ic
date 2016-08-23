@@ -1,5 +1,5 @@
-= post.title
-p
-= post.text_html
-p
-= render "comments/comment_block"
+.container
+  = render(post)
+  = render "control_panel"
+
+= render("comments/comment_block", comments: comments, comment: comment)

@@ -1,7 +1,7 @@
 - if current_user.present?
   | Write your comment
   /- binding.pry
-  = simple_form_for([post, comment]) do |f|
+  = simple_form_for([:users, post, comment]) do |f|
     .form-inputs
       = f.input :text
     .form-actions

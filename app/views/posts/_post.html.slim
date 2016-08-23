@@ -1,0 +1,11 @@
+.blog-post
+  h2
+    = link_to(post.title, post)
+  p
+    = post.text_html
+  .callout
+    ul(class="menu simple")
+      li
+        = link_to "Author: #{post.author}", post
+      li
+        = link_to "Comments: #{post.comments_number}", post
