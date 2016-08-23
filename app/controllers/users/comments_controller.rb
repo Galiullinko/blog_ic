@@ -1,7 +1,8 @@
 module Users
   class CommentsController < ApplicationController
-    expose(:comment, attributes: :comment_params)
     expose(:post)
+    expose(:comment, attributes: :comment_params)
+    expose_decorated(:comments) { Comment.by_post(post) }
 
     def create
       comment.user = current_user

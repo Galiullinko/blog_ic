@@ -10,9 +10,6 @@ class PostsController < ApplicationController
   def show
   end
 
-  def new
-  end
-
   private
 
   def recent_posts_finder
