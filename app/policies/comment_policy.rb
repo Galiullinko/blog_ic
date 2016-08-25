@@ -1,4 +1,4 @@
-class CommentPolicy < ApplictionPolicy
+class CommentPolicy < ApplicationPolicy
   def edit?
     owner?
   end
@@ -14,6 +14,6 @@ class CommentPolicy < ApplictionPolicy
   private
 
   def owner?
-    user.present? && record.author == user
+    user.present? && record.user == user
   end
 end
