@@ -2,6 +2,8 @@
   .callout
     ul(class="menu simple")
       li
-        = link_to "Delete post", action: :destroy, post: post, controller: "users/posts"
+        = link_to([:users, post], method: :delete, class: "btn btn-danger", data: { confirm: "Are you sure?" }) do
+          | Delete
+
       li
         = link_to "Edit post", edit_users_post_path(post)
