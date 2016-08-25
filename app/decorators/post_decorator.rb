@@ -1,5 +1,5 @@
 class PostDecorator < ApplicationDecorator
-  delegate :title, :text, :user, :comments
+  delegate :title, :text, :user, :comments, :id
 
   def author
     user.full_name
