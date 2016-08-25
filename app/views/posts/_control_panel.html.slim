@@ -1,8 +1,7 @@
-/- binding.pry
-/- if policy(post).owner?
-.callout
-  ul(class="menu simple")
-    li.button
-      = link_to "Delete post", action: :destroy, post: post, controller: "users/posts"
-    li.button
-      = link_to "Edit post", edit_users_post_path(post)
+- if policy(post).owner?
+  .callout
+    ul(class="menu simple")
+      li
+        = link_to "Delete post", action: :destroy, post: post, controller: "users/posts"
+      li
+        = link_to "Edit post", edit_users_post_path(post)

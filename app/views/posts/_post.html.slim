@@ -1,4 +1,4 @@
-.blog-post
+.inline-list
   h2
     = link_to(post.title, post)
   p
@@ -6,6 +6,6 @@
   .callout
     ul(class="menu simple")
       li
-        = link_to "Author: #{post.author}", post
+        = link_to "Author: #{post.author}", controller: "user_posts", action: :index, user_id: post.user.id
       li
         = link_to "Comments: #{post.comments_number}", post

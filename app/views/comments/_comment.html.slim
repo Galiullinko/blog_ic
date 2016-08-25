@@ -1,5 +1,9 @@
 .row
   .callout
-    = comment.user.full_name
-    br
-    = comment.text
+    .medium-10.columns
+      = comment.user.full_name
+      br
+      = comment.text
+    .medium-2.columns
+      - if policy(comment).destroy?
+        = link_to "Delete", users_post_comment_path(post, comment), method: :delete
