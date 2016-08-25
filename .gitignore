@@ -13,3 +13,4 @@ vendor/ruby
 .env
 .pryrc
 public/uploads/tmp/*
+public/uploads/ckeditor/*
