@@ -14,6 +14,11 @@ module Users
       end
     end
 
+    def destroy
+      comment.destroy
+      respond_with post
+    end
+
     private
 
     def comment_params
