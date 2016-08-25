@@ -17,7 +17,7 @@ module Users
 
     def destroy
       post.destroy
-      respond_with root
+      respond_with post
     end
 
     def new
