@@ -13,7 +13,7 @@ class PostsController < ApplicationController
   private
 
   def recent_posts_finder
-    Post.includes(:user).order(created_at: :desc).limit(25)
+    Post.includes(:user).order(created_at: :desc).page(params[:page]).per(7)
   end
 
   def post_params
