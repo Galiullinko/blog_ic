@@ -4,5 +4,5 @@ class Post < ActiveRecord::Base
 
   validates :text, :title, presence: true
 
-  scope :by_user, ->(user) { where(user: user) }
+  scope :by_user, -> (user) { where(user: user) }
 end
