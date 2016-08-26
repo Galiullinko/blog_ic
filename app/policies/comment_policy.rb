@@ -14,6 +14,6 @@ class CommentPolicy < ApplicationPolicy
   private
 
   def owner?
-    user.present? && record.user == user
+    user && record.user == user
   end
 end
