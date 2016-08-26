@@ -3,7 +3,6 @@ module Users
     before_action :authenticate_user!
     expose_decorated(:post, attributes: :post_params)
     expose_decorated(:comments) { post.comments.includes(:user) }
-    expose(:comment) { post.comments.new }
 
     # TODO: respond_with (responder)
     def create

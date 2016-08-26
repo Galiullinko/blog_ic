@@ -2,13 +2,13 @@ module Users
   class CommentsController < ApplicationController
     expose(:post)
     expose(:comment, attributes: :comment_params)
-    expose_decorated(:comments) { Comment.by_post(post) }
+    expose(:comments, ancestor: :post) #TODO check this on github wiki
 
     def create
       comment.user = current_user
       comment.post = post
       if comment.save
-        redirect_to post_path(comment.post)
+        respond_with post
       else
         flash[:error] = "Error"
       end
