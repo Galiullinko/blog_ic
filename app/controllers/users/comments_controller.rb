@@ -2,7 +2,7 @@ module Users
   class CommentsController < ApplicationController
     expose(:post)
     expose(:comment, attributes: :comment_params)
-    expose(:comments, ancestor: :post) #TODO check this on github wiki
+    expose(:comments, ancestor: :post)
 
     def create
       comment.user = current_user
